@@ -19,3 +19,9 @@ This repository provides a boilerplate for a scalable AI‑native application pl
 - **tests** – Playwright end‑to‑end test suite.
 
 Each service is intentionally minimal. Extend the modules as needed for your organisation.
+
+## Real-time Collaboration
+
+- Elasticache for Redis is provisioned via Terraform and acts as the coordination layer for pub/sub.
+- The `@enterprise/realtime` package uses Fluid Framework to sync data in real time across the Next.js frontend and Flutter mobile app.
+- Example usage is provided as a shared task list where updates are stored in Redis along with agent state, chat context and collaborative docs.

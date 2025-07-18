@@ -1,3 +1,2 @@
-export function setupRealtime() {
-  console.log('Initialize Fluid Framework');
-}
+export { createRedisClient, saveDocument, loadDocument } from './redisClient';
+export { getTaskListContainer } from './taskList';
