@@ -12,6 +12,7 @@
     "test": "nx run-many --target=test"
   },
   "devDependencies": {
-    "nx": "^21.2.4"
+    "nx": "^21.2.4",
+    "@playwright/test": "^1.42.1"
   }
 }
