@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+
+export const pages = import.meta.glob('../../content/platform/*.mdx');
+export const prerender = true;
+export async function getStaticPaths() {
+  return Object.keys(pages).map((path) => {
+    const slug = path.split('/').pop().replace('.mdx','');
+    return { params: { slug } };
+  });
+}
+
+const { slug } = Astro.params;
+const key = `../../content/platform/${slug}.mdx`;
+const loader = pages[key];
+const Content = loader ? (await loader())?.default : null;
+const sections = [
+  { title: 'Docs', items: [{ title: 'Overview', href: '/docs/overview' }] },
+  { title: 'Integrations', items: [{ title: 'SAP BTP', href: '/integrations/sap-btp' }] },
+];
+---
+<Layout title={slug}>
+  <Fragment slot="sidebar">
+    <Sidebar sections={sections} />
+  </Fragment>
+  {Content ? <Content /> : <p>Not found.</p>}
+</Layout>

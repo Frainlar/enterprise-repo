@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+
+const sections = [
+  { title: 'Docs', items: [{ title: 'Overview', href: '/docs/overview' }] },
+  { title: 'Integrations', items: [{ title: 'SAP BTP', href: '/integrations/sap-btp' }] },
+];
+---
+<Layout title="Enterprise Platform">
+  <Fragment slot="sidebar">
+    <Sidebar sections={sections} />
+  </Fragment>
+  <h1 class="text-2xl font-bold mb-4">Enterprise Platform Documentation</h1>
+  <p>Welcome to the developer portal.</p>
+</Layout>
