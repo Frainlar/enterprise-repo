@@ -9,10 +9,19 @@
     "dev": "nx run-many --target=dev --parallel",
     "build": "nx run-many --target=build",
     "lint": "nx run-many --target=lint",
-    "test": "nx run-many --target=test"
+    "test": "nx run-many --target=test",
+    "storybook": "storybook dev -p 6006 -c storybook",
+    "build-storybook": "storybook build -c storybook -o storybook-static",
+    "lostpixel": "lost-pixel"
   },
   "devDependencies": {
     "nx": "^21.2.4",
-    "@playwright/test": "^1.42.1"
+    "@playwright/test": "^1.42.1",
+    "@storybook/nextjs": "^9.0.17",
+    "@storybook/addon-a11y": "^9.0.17",
+    "@storybook/addon-docs": "^9.0.17",
+    "@storybook/addon-controls": "^9.0.8",
+    "@storybook/cli": "^9.0.17",
+    "lost-pixel": "^3.22.0"
   }
 }
