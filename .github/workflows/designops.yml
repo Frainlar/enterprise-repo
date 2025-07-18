@@ -1,0 +1,46 @@
+name: DesignOps
+
+on:
+  pull_request:
+    branches:
+      - main
+      - 'release/*'
+    paths:
+      - 'packages/shared-ui/**'
+      - 'apps/frontend/**'
+      - 'apps/mobile/**'
+  workflow_dispatch:
+
+jobs:
+  build-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - run: corepack enable
+      - run: pnpm install
+      - run: pnpm build-storybook
+      - uses: actions/upload-artifact@v3
+        with:
+          name: storybook-static
+          path: storybook-static
+
+  lostpixel:
+    needs: build-storybook
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - run: corepack enable
+      - run: pnpm install
+      - uses: actions/download-artifact@v3
+        with:
+          name: storybook-static
+          path: storybook-static
+      - run: pnpm lostpixel

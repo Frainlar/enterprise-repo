@@ -25,3 +25,9 @@ Each service is intentionally minimal. Extend the modules as needed for your org
 - Elasticache for Redis is provisioned via Terraform and acts as the coordination layer for pub/sub.
 - The `@enterprise/realtime` package uses Fluid Framework to sync data in real time across the Next.js frontend and Flutter mobile app.
 - Example usage is provided as a shared task list where updates are stored in Redis along with agent state, chat context and collaborative docs.
+
+## DesignOps
+
+- Storybook renders UI components from `packages/shared-ui` with accessibility checks and docs.
+- Lost Pixel runs visual regression tests on Storybook to catch unintended UI changes.
+- GitHub Actions builds Storybook and executes Lost Pixel on pull requests targeting `main` or `release/*`.
