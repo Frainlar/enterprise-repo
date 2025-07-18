@@ -6,12 +6,12 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build",
-    "lint": "turbo run lint",
-    "test": "turbo run test"
+    "dev": "nx run-many --target=dev --parallel",
+    "build": "nx run-many --target=build",
+    "lint": "nx run-many --target=lint",
+    "test": "nx run-many --target=test"
   },
   "devDependencies": {
-    "turbo": "^1.11.3"
+    "nx": "^21.2.4"
   }
 }

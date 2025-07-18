@@ -1,4 +1,4 @@
-module backend-go
+module gin-analytics-api
 
 go 1.20
 
