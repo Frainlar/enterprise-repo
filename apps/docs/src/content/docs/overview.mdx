@@ -1,0 +1,17 @@
+---
+title: Overview
+---
+# Platform Overview
+
+This site documents the AI-native enterprise platform.
+
+```
+sequenceDiagram
+    participant Client
+    participant API
+    participant DB
+    Client->>API: request
+    API->>DB: query
+    DB-->>API: results
+    API-->>Client: response
+```
