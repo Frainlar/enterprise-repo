@@ -1,0 +1,10 @@
+enterprise:
+  target: dev
+  outputs:
+    dev:
+      type: athena
+      s3_staging_dir: s3://enterprise-data-platform/query-results/
+      region_name: us-east-1
+      database: enterprise_dwh
+      schema: analytics
+      aws_profile_name: default
