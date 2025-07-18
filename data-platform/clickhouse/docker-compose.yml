@@ -1,0 +1,9 @@
+version: '3'
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:23.3
+    ports:
+      - '8123:8123'
+      - '9000:9000'
+    volumes:
+      - ./data:/var/lib/clickhouse

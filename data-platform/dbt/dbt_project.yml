@@ -1,0 +1,5 @@
+name: enterprise_dwh
+version: '1.0'
+config-version: 2
+profile: enterprise
+model-paths: ['models']
