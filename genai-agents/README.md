@@ -8,3 +8,5 @@ This folder contains orchestrators for various generative AI frameworks. Each ag
 - **LlamaIndexAgent** – context-aware retrieval augmented generation
 - **LlamaGraphAgent** – knowledge graph querying via LlamaGraph
 - **StrandsRoutingAgent** – graph-routed decision making
+- **LangChainRouter** – LangChain router with Promptflow templates and
+  Semantic Kernel planning

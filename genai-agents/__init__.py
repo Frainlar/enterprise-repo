@@ -7,6 +7,7 @@ from .autogen_agent import AutoGenOrchestrator
 from .llamaindex_agent import LlamaIndexAgent
 from .llamagraph_agent import LlamaGraphAgent
 from .strands_agent import StrandsRoutingAgent
+from .langchain_router import LangChainRouter
 
 __all__ = [
     "AgentTask",
@@ -16,4 +17,5 @@ __all__ = [
     "LlamaIndexAgent",
     "LlamaGraphAgent",
     "StrandsRoutingAgent",
+    "LangChainRouter",
 ]
