@@ -1,3 +1,10 @@
 # GenAI Agents
 
-This folder contains sample integrations with LangChain, LlamaIndex and other frameworks. Use these modules to orchestrate multi-agent workflows and connect to external services like SAP or vector stores.
+This folder contains orchestrators for various generative AI frameworks. Each agent exposes a standard `run(task: AgentTask)` interface.
+
+- **LangChainBedrockAgent** – LangChain agent running on AWS Bedrock
+- **CrewAgent** – role and task decomposition with CrewAI
+- **AutoGenOrchestrator** – multi-agent dialogue using AutoGen
+- **LlamaIndexAgent** – context-aware retrieval augmented generation
+- **LlamaGraphAgent** – knowledge graph querying via LlamaGraph
+- **StrandsRoutingAgent** – graph-routed decision making
